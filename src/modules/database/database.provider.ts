@@ -1,6 +1,8 @@
 import { ConfigService } from '@nestjs/config';
 import { CONFIG, PROVIDERS, SYSTEM } from '../../common/constants';
 import { Sequelize } from 'sequelize-typescript';
+import { Pet } from '../pet/pet.model';
+import { Owner } from '../owner/owner.model';
 
 export const databaseProvider = [
   {
@@ -9,7 +11,7 @@ export const databaseProvider = [
       const sequelize = new Sequelize({
         ...configService.get(CONFIG.DATABASE),
       });
-      sequelize.addModels([]);
+      sequelize.addModels([Pet, Owner]);
       return sequelize;
     },
     inject: [ConfigService],
