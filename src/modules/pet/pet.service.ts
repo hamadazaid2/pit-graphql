@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Pet } from './pet.model';
 import { PROVIDERS } from 'src/common/constants';
-import { CreatePetInput } from './input/create-pet.input';
+import { CreatePetInput } from './dto/create-pet.input';
 import { FindOptions } from 'sequelize';
 import { OwnerService } from '../owner/owner.service';
 import { Owner } from '../owner/owner.model';

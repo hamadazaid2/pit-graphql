@@ -9,7 +9,7 @@ import {
 } from '@nestjs/graphql';
 import { PetService } from './pet.service';
 import { Pet } from './pet.model';
-import { CreatePetInput } from './input';
+import { CreatePetInput } from './dto';
 import { Owner } from '../owner/owner.model';
 
 @Resolver((of) => Pet)
