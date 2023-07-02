@@ -13,6 +13,11 @@ export class PetService {
     private readonly ownerService: OwnerService,
   ) {}
 
+  async findWhere(options: FindOptions, scopes?: string[]): Promise<any> {
+    const pets = await this.petRepository.scope(scopes).findAll(options);
+    return pets;
+  }
+
   async findAll(): Promise<any> {
     const pets = await this.petRepository.findAll();
     console.log(pets);
